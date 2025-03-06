@@ -1,1 +1,58 @@
+//structure
+#include<stdio.h>
+#incvlude<string>
+struct student{
+char name[20];
+int roll;
+char div;
+};
+int main()
+{
+struct student a[2];
+int i;
+printf("Enter studens details :");
+for(i=1;i<=2;i++)
+{
+printf(" 1. Enter student name");
+scanf("%c",a[i].name);
+printf("2. Enter Roll No.");
+scanf("%d",&a[i].roll);
+printf("3.Enter division");
+scanf("%c",&a[i].div);
+}
+printf("Print studens details :");
+for(i=1;i<=2;i++)
+{
+printf(" name :%c",a[i].name);
+printf("Roll No. :%d",a[i].roll);
+printf("division: %c",a[i].div);
+}
+int position,newposition;
+printf("Enter Position");
+scanf("%d",&position);
 
+struct student newstudent;
+{
+printf(" 1. Enter student name");
+scanf("%c",a->name);
+printf("2. Enter Roll No.");
+scanf("%d",&a->roll);
+printf("3.Enter division");
+scanf("%c",&a->div);
+}
+printf("Print studens details :");
+for(i=2;i<=2;i++)
+{
+printf(" name :%c",a->name);
+printf("Roll No. :%d",a->roll);
+printf("division: %c",a->div);
+}
+
+for(i=3;i>=3;i--)
+{
+a[i-1]=a[i];
+}
+newposition=a[position-1];
+newstudent=student(position);
+return 0;
+}      
