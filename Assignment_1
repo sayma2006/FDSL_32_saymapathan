@@ -1,58 +1,92 @@
-//structure
+
+//Menu driven of structure
 #include<stdio.h>
-#incvlude<string>
+#include<string.h>
 struct student{
-char name[20];
-int roll;
-char div;
+  char name[20];
+  int roll;
 };
 int main()
 {
-struct student a[2];
-int i;
-printf("Enter studens details :");
-for(i=1;i<=2;i++)
-{
-printf(" 1. Enter student name");
-scanf("%c",a[i].name);
-printf("2. Enter Roll No.");
-scanf("%d",&a[i].roll);
-printf("3.Enter division");
-scanf("%c",&a[i].div);
-}
-printf("Print studens details :");
-for(i=1;i<=2;i++)
-{
-printf(" name :%c",a[i].name);
-printf("Roll No. :%d",a[i].roll);
-printf("division: %c",a[i].div);
-}
-int position,newposition;
-printf("Enter Position");
-scanf("%d",&position);
-
-struct student newstudent;
-{
-printf(" 1. Enter student name");
-scanf("%c",a->name);
-printf("2. Enter Roll No.");
-scanf("%d",&a->roll);
-printf("3.Enter division");
-scanf("%c",&a->div);
-}
-printf("Print studens details :");
-for(i=2;i<=2;i++)
-{
-printf(" name :%c",a->name);
-printf("Roll No. :%d",a->roll);
-printf("division: %c",a->div);
-}
-
-for(i=3;i>=3;i--)
-{
-a[i-1]=a[i];
-}
-newposition=a[position-1];
-newstudent=student(position);
+ struct student a[3];
+ int i,ch,Roll,position,found,R,n,B;
+ char Name;
+ do
+ {
+   printf("1.Enter the details");
+   printf("\n2.Display the details");
+   printf("\n3.Update the details");
+   printf("\n4.Delete the details");
+   printf("\n5.Exit");
+   printf("\nEnter the choise\n\n");
+   scanf("%d",&ch);
+   switch(ch)
+     {
+       case 1:  for(i=1;i<=3;i++)
+               {
+               printf("Student :%d\n",i);
+               printf("\nEnter Name :");
+               scanf("%s",a[i].name);
+               printf("\nEnter Roll No. : \n\n");
+               scanf("%d",&a[i].roll);
+               }
+       break;
+       
+       case 2: for(i=1;i<=3;i++)
+               {
+               printf("\nName :%s",a[i].name);
+               printf("\nRoll No. :%d\n\n",a[i].roll);
+               }
+       break;
+       
+       case 3:printf("Enter the roll no. to modify details");
+              scanf("%d",&Roll);
+              
+               if(Roll==a[i].roll)
+               {
+                 printf("\nEnter New name :");
+                 scanf("%s",&Name);
+                 strcpy(&Name,a[i].name);
+                 printf("\nEnter New Roll No.:");
+                 scanf("%d",&R);
+                 B=a[i].roll;
+                 a[i].roll=R;
+               } 
+               else
+               {
+               printf("\nEnter :");
+               }
+               
+             printf("\nModified Successfully...\n"); 
+       break;
+       
+       case 4:printf("\nEnter Roll NO. to delete details:\n");
+              scanf("%d",&R);
+              if(R>0||R<n)
+              {
+               for(i=R-1;i<n-1;i++)
+               {
+                a[i]=a[i+1];
+                
+                  
+                } 
+                
+                n--;
+                
+                }
+                else{
+                printf("Wrong position");
+                }
+                printf("\n Delete Successfully..\n");            
+                break;
+                
+       case 5:printf("\nExit from the program");
+       break;
+       
+       default:printf("\nwrong choise\n");
+    }
+    printf("\nDo you want to continue (1/0)\n");
+    scanf("%d",&ch);
+ }while(ch!=0);
 return 0;
-}      
+}
