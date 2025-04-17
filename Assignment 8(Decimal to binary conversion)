@@ -1,0 +1,38 @@
+//binary to decimal
+#include<stdio.h>
+int stack[20];
+int top=-1;
+void push(int x)
+{
+ stack[++top]=x;
+}
+void pop()
+{
+ top--;
+}
+void decimal_To_binary()
+{
+ int num;
+ printf("Enter decimal no.");
+ scanf("%d",&num);
+ if(num==0)
+  {
+   printf("0");
+   return;
+  }
+  while(num>0)
+   {
+     push(num%2);
+     num=num/2;
+   }
+  while(top!=-1)
+  {
+   printf("%d",stack[top]);
+   pop();
+  }
+}
+int main()
+{
+decimal_To_binary();
+return 0;
+}
