@@ -1,0 +1,73 @@
+//stack
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 5
+int a[MAX],top=-1;
+void push()
+ {
+  int value;
+  if(top==MAX-1)
+   {
+    printf("Stack overflow");
+   }
+  else
+  {
+   printf("Enter the element to be inserted");
+   scanf("%d",&value);
+   top=top+1;
+   a[top]=value;
+   printf("The inseted element is %d",value);
+  }
+ }
+ void pop()
+ {
+  if(top==-1)
+   {
+    printf("Stack underflow");
+   }
+  else
+  {
+   printf("Popped element is %d",a[top--]);
+  }
+ }
+void display()
+{
+ if(top==-1)
+  {
+   printf("Stack is empty\n");
+   return;
+  }
+  else
+  {
+  printf("Stack element :");
+  for(int i=top;i>=0;i--)
+   {
+     printf("%d  ",a[i]);
+   }
+  printf("\n");
+  }
+}
+int main()
+{
+ int choice,ch,i;
+ do
+  {
+   printf("\nStack options\n");
+   printf("1.push\n2.Pop\n3.Display\n4.Exit\n");
+   printf("Enter your choice");
+   scanf("%d",&choice);
+   switch(choice)
+   {
+     case 1:push();
+            break;
+     case 2:pop();
+            break;
+     case 3:display();
+            break;
+     case 4:printf("Existing program\n");
+            exit(0);
+     default:printf("Invalid choice, please try again\n");
+   }
+  }while(ch!=0);
+ return 0;
+}
