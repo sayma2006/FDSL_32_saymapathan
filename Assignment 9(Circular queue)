@@ -1,0 +1,83 @@
+//circular queue
+#include<stdio.h>
+#define size 5
+int queue[size];
+int i,rear=-1,front=-1;
+
+void enQueue(int ele)
+{
+ if(rear==-1&&front==-1)
+  {
+    rear=0;
+    front=0;
+    queue[rear]=ele;
+    printf("\n%d is Inserted\n ",ele);
+  }
+ else if((rear+1)%size==front)
+  {
+   printf("\nQueue is full\n");
+  }
+ else
+ {
+ rear=(rear+1)%size;
+ queue[rear]=ele;
+ printf("\n%d is Inserted\n ",ele);
+ }
+}
+
+void deQueue()
+{
+ if(front==-1&&rear==-1)
+  {
+    printf("\nQueue is empty\n");
+  }
+ else if(rear==front)
+  {
+    printf("\nElement deleted is %d \n\n",queue[front]);
+    rear=-1;
+    front=-1;
+  }
+ else
+ {
+ printf("\n%d is deleted\n",queue[front]);
+ front=(front+1)%size;
+ }
+}
+
+void display()
+ {
+  if(front==-1 && rear==-1)
+   {
+    printf("\nQueue is empty\n");
+   }
+  else
+   {
+    printf("\nElements are"); 
+    for(i=front;i<=rear;i++)
+    {
+    printf("%d  ",queue[i]); 
+    }
+     printf("\n"); 
+   }
+ }
+int main()
+{
+ enQueue(5);
+ enQueue(7);
+ display();
+ enQueue(54);
+ enQueue(3);
+ enQueue(2);
+ display();
+ deQueue();
+ display();
+ deQueue();
+ enQueue(8);
+ deQueue();
+ display();
+ deQueue();
+ return 0;
+}       
+     
+    
+    
