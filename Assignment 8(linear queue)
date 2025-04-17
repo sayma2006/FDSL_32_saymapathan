@@ -1,0 +1,79 @@
+#include<stdio.h>
+#define MAX 5
+int queue[MAX];
+int rear=-1,front=-1;
+
+void enQueue()
+{
+ if(rear==MAX-1)
+  {
+    printf("Queue is full ");
+  }
+ else
+  {
+   int element;
+   printf("Enter element to insert :");
+   scanf("%d",&element);
+   rear++;
+   queue[rear]=element;
+   printf("Inserted element is %d",element);
+  }
+}
+
+void deQueue()
+{
+ if(front==rear)
+  {
+    printf("Queue is empty");
+  }
+ else
+  {
+    front++;
+    printf("Element deleted is %d ",queue[front]);
+  }
+}
+
+void display()
+ {
+  if(front==-1 && rear==-1)
+   {
+    printf("Queue is empty\n");
+   }
+  else
+   {
+     printf("Queue elements are :");
+     for(int i=front+1;i<=rear;i++)
+      {
+        printf("%d",queue[i]);
+      }
+   }
+ }
+int main()
+{
+ int ch;
+ do
+ {
+   printf("Queue Operations");
+   printf("\n 1.enQueue\n2.deQueue\n3.display\n");
+   printf("\nEnter your choice :");
+   scanf("%d",&ch);
+   switch(ch)
+   {
+    case 1:enQueue();
+           break;
+   case 2 :deQueue;
+           break;
+   case 3:display();
+           break;
+   default :printf("\nInvalid choice");
+   }
+   printf("\nDo you want to continue(0/1) :");
+   scanf("%d",&ch);
+   }while(ch!=0);
+ return 0;
+}       
+     
+    
+    
+    
+  
