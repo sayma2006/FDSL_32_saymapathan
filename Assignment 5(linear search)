@@ -1,0 +1,31 @@
+//linear   search                                                                                                                                                                                                                                                                                                                                                                                                                                           #include<stdio.h>
+int main()
+{
+int n=10,i,key,found=0;
+printf("Enter the size of a array:");
+scanf("%d",&n);
+
+printf("Enter the key which you wan to found :");
+scanf("%d",&key);
+int a[n];
+printf("Enter %d array elements :",n);
+for(i=0;i<n;i++)
+{
+ scanf("%d",&a[i]);
+}
+for(i=0;i<n;i++)
+{
+ if(key==a[i])
+  {
+     printf("\nThe Key %d is found at %dth pasition\n",key,i);
+     found=1;
+     break;
+  }
+  }
+  
+  if(!found)
+    {
+      printf("\nNot found\n");
+    }
+return 0;
+}
